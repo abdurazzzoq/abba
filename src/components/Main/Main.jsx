@@ -7,7 +7,7 @@ const Main = () => {
   const [mainProduct, setMainProduct] = useState([]);
 
   useEffect(() => {
-    fetch(BASE_URL + "/post")
+    fetch(BASE_URL + "/posts")
       .then((res) => res.json())
       .then((data) => {
        
@@ -17,7 +17,7 @@ const Main = () => {
 
   return (
     <div className="bg pt-10 md:pt-96">
-      {mainProduct.map((item, id) => (
+      {mainProduct.slice(0,1).map((item, id) => (
         <div
           key={id}
           className={`flex flex-col text-center md:flex-row  items-center justify-evenly bg-2 pb-20  ${styles.paddingX} `}
